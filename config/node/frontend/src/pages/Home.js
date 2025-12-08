@@ -1,16 +1,21 @@
 import React from 'react';
-import {Typography, Button} from '@mui/material'
+import {Typography, Button} from '@mui/material';
+import {Link} from 'react-router-dom';
 
 function Home(props) {
     return (
         <div className='Home'>
-        <h1 classname='home_title'>GEOPORTAL</h1>
+        <h1 className='home_title'>GEOPORTAL</h1>
 
             <Typography className='home_subtitle'>
                 Geoportal tematyczny poświęcony danym przestrzennym.
             </Typography>
 
-            <Button className='home__button' variant='contained'>START</Button>
+            <Button className='home__button'
+                    variant='contained'
+                    size='large'
+                    component={Link}
+                    to='services'>START</Button>
         </div>
     );
 }
