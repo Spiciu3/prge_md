@@ -11,3 +11,5 @@ permissions:
 jobs:
   build-and-push:
     name: Build & Push
+    runs-on:
+      -self-hosted
