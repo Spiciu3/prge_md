@@ -18,5 +18,11 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: uruchom środowisko docker-compose
+        env:
+          #DB
+        POSTGRES_DB: ${{secrets.POSTGRES_DB}}
+        POSTGRES_USER: ${{secrets.POSTGRES_USER}}
+        POSTGRES_PASSWORD: ${{secrets.POSTGRES_PASSWORD}}
+
         run: |
           docker-compose -f ./docker-compose/docker-compose-prge-local.yaml --env-file .env -p local -prge up --build -d
