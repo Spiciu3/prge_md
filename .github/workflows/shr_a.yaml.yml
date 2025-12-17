@@ -3,6 +3,8 @@ on:
   push:
     branches:
     - env-test
+    - env-qa
+    - main
 
 permissions:
   contents: read
@@ -15,6 +17,7 @@ jobs:
       -self-hosted
 
     environment: ${{github.ref_name}}
+
     steps:
       - uses: actions/checkout@v3
 
